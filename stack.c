@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 	{
 		for (or = 2; argv[0][or]; or++)
 			ar0[or - 2] = argv[0][or];
+		ar0[or - 2] = '\0';
 		orror("USAGE: "), orror(ar0), orror(" file\n");
 		free(ar0);
 		return (EXIT_FAILURE);
