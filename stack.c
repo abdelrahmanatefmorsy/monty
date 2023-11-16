@@ -21,7 +21,8 @@ int main(int argc, char *argv[])
 	{
 		for (or = 2; argv[0][or]; or++)
 			ar0[or - 2] = argv[0][or];
-		orror("USAGE: "), orror(ar0), orror("\n");
+		orror("USAGE: "), orror(ar0), orror(" file\n");
+		free(ar0);
 		return (EXIT_FAILURE);
 	}
 	ptrfile = fopen(argv[1], "r");
