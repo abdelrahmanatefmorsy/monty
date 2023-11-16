@@ -13,24 +13,22 @@ void translate(char *str, unsigned int line, stack_t **start, char *buffer)
 	char *strline = tostr(line);
 
 	instruction_t check[] = {
-	{"push", push},
-	{"pall", pall},
-	{"pint", pint},
-	{"pop", pop},
-	{"swap", swap},
+		{"push", _push},
+		{"pall", _pall}
 	};
+
 	for (i = 0; i < 2; i++)
 	{
 		if (comp(str, check[i].opcode))
 		{
-			check[i].f(str, line);
-			return 
+			check[i].f(start, line);
+			return;
 		}
 	}
 	write(2, "L", 1);
-	orror(linestr), orror(": unknown instruction "), orro(str), orror("\n");
+	orror(strline), orror(": unknown instruction "), orror(str), orror("\n");
 	free(buffer);
 	freest(*start);
-	free(linestr);
+	free(strline);
 	exit(EXIT_FAILURE);
 }

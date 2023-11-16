@@ -43,7 +43,7 @@ int comp(char *s1, char *s2)
 char *tostr(int number)
 {
 	char *str;
-	int i = 0, j;
+	int i = 0;
 
 	str = malloc(sizeof(char) * 100000);
 	if (number == 0)
@@ -55,7 +55,7 @@ char *tostr(int number)
 	if (number < 0)
 	{
 		number *= -1;
-		str[0]= '-';
+		str[0] = '-';
 		i++;
 	}
 	while (number != 0)

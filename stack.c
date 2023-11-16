@@ -8,14 +8,16 @@
 int main(int argc, char *argv[])
 {
 	FILE *ptrfile;
-	char * buffer = malloc(10000), *strget, *ar0;
+	char *buffer = malloc(10000);
+	char *strget, *ar0;
 	unsigned int line = 0, or;
 	stack_t *start = NULL;
-	arr = malloc(100000);
+
+	ar0 = malloc(100000);
 	if (argc != 2)
 	{
-		for (or = 2; argv[0][or];or++)
-			ar0[or - 2] = argv[i];
+		for (or = 2; argv[0][or]; or++)
+			ar0[or - 2] = argv[0][or];
 		orror("USAGE: "), orror(ar0), orror("\n");
 		return (EXIT_FAILURE);
 	}
@@ -26,7 +28,7 @@ int main(int argc, char *argv[])
 		orror(argv[1]), orror("\n");
 		return (EXIT_FAILURE);
 	}
-	while (fgets(bufer, 10000, ptrfile))
+	while (fgets(buffer, 10000, ptrfile))
 	{
 		line++;
 		strget = strtok(buffer, "\t\n\r ");
@@ -34,15 +36,19 @@ int main(int argc, char *argv[])
 			continue;
 		translate(strget, line, &start, buffer);
 	}
+	free(buffer);
+	fclose(ptrfile);
+	freest(start);
+	return (EXIT_SUCCESS);
 }
 /**
  * orror- print error in stderr
  * @err : ther error will print
- * Return : 0 
+ * Return : 0:
  */
 void orror(char *err)
 {
-	write(2,err,_strlen(err));
+	write(2, err, _strlen(err));
 }
 /**
  * freest - free function

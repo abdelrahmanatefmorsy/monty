@@ -22,16 +22,26 @@ typedef struct stack_s
 } stack_t;
 
 /**
- *  * struct instruction_s - opcode and its function
- *   * @opcode: the opcode
- *    * @f: function to handle the opcode
- *     *
- *      * Description: opcode and its function
- *       * for stack, queues, LIFO, FIFO
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
+ * @f: function to handle the opcode
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO
 */
 typedef struct instruction_s
 {
-		char *opcode;
-			void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+void _pall(stack_t **stack, unsigned int line);
+void translate(char *str, unsigned int line, stack_t **start, char *buffer);
+int _atoi(char *s);
+void _push(stack_t **stack, unsigned int line);
+void orror(char *err);
+void freest(stack_t *stack);
+int _strlen(char *s);
+int comp(char *s1, char *s2);
+char *tostr(int number);
+int notint(char *str);
 #endif
