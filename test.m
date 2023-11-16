@@ -1,5 +1,6 @@
-push    123123
 push 1
-push       5
-efqfqef
+push 2
+push 10
+push 3
+sub
 pall

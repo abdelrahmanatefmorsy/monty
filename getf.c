@@ -15,10 +15,14 @@ void translate(char *str, unsigned int line, stack_t **start)
 		{"push", _push},
 		{"pall", _pall},
 		{"pop", _pop},
-		{"pint", _pint}
+		{"pint", _pint},
+		{"swap", _swap},
+		{"add", _add},
+		{"sub", _sub},
+		{"mul", _mul}
 	};
 
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 8; i++)
 	{
 		if (comp(str, check[i].opcode))
 		{
