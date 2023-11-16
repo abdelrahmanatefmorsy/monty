@@ -7,7 +7,7 @@
  * @buffer: buffer array
  * Return : 0
  */
-void translate(char *str, unsigned int line, stack_t **start, char *buffer)
+void translate(char *str, unsigned int line, stack_t **start)
 {
 	int i;
 	char *strline = tostr(line);
@@ -27,7 +27,6 @@ void translate(char *str, unsigned int line, stack_t **start, char *buffer)
 	}
 	write(2, "L", 1);
 	orror(strline), orror(": unknown instruction "), orror(str), orror("\n");
-	free(buffer);
 	freest(*start);
 	free(strline);
 	exit(EXIT_FAILURE);

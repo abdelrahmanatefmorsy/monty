@@ -35,7 +35,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void _pall(stack_t **stack, unsigned int line);
-void translate(char *str, unsigned int line, stack_t **start, char *buffer);
+void translate(char *str, unsigned int line, stack_t **start);
 int _atoi(char *s);
 void _push(stack_t **stack, unsigned int line);
 void orror(char *err);

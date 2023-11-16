@@ -31,16 +31,14 @@ void _push(stack_t **stack, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 	s->n = n;
-	s->prev = NULL;
 	if (!(*stack))
 	{
+		(*stack) = s;
 		s->next = NULL;
-		*stack = s;
 	}
 	else
 	{
 		s->next = *stack;
-		(*stack)->prev = s;
 		*stack = s;
 	}
 }

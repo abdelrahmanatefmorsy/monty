@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 		strget = strtok(buffer, "\t\n\r ");
 		if (!strget)
 			continue;
-		translate(strget, line, &start, buffer);
+		translate(strget, line, &start);
 	}
 	fclose(ptrfile);
 	freest(start);
