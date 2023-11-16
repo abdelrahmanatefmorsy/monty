@@ -19,7 +19,8 @@ void translate(char *str, unsigned int line, stack_t **start)
 		{"swap", _swap},
 		{"add", _add},
 		{"sub", _sub},
-		{"mul", _mul}
+		{"mul", _mul},
+		{"nop", _nop}
 	};
 
 	for (i = 0; i < 8; i++)

@@ -41,3 +41,13 @@ void _swap(stack_t **stack, unsigned int line)
 	(*stack)->next = ptr;
 	*stack = ptr2;
 }
+/**
+ * _nop - nop
+ * @stack: my stack
+ * @line: number line
+ */
+void _nop(stack_t **stack, unsigned int line)
+{
+	stack = stack;
+	line = line;
+}

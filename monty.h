@@ -48,6 +48,7 @@ void _swap(stack_t **stack, unsigned int line_num);
 void _sub(stack_t **stack, unsigned int line);
 void _add(stack_t **stack, unsigned int line);
 void _mul(stack_t **stack, unsigned int line);
+void _nop(stack_t **stack, unsigned int line);
 int comp(char *s1, char *s2);
 char *tostr(int number);
 int notint(char *str);
