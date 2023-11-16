@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	FILE *ptrfile;
-	char *buffer = malloc(10000);
+	char *buffer = NULL;
 	char *strget = NULL, *ar0 = NULL;
 	unsigned int line = 0, or;
 	size_t size = 0;
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 		orror(argv[1]), orror("\n");
 		return (EXIT_FAILURE);
 	}
-	while (getline(&buffer, &size, ptrfile) != -1)
+	while ((getline(&buffer, &size, ptrfile) != -1))
 	{
 		line++;
 		strget = strtok(buffer, "\t\n\r ");
