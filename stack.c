@@ -11,10 +11,9 @@
 int main(int argc, char *argv[])
 {
 	FILE *ptrfile;
-	char *buffer = NULL;
+	char buffer[1000000];
 	char *strget = NULL, *ar0 = NULL;
 	unsigned int line = 0, or;
-	size_t n = 0;
 	stack_t *start = NULL;
 
 	ar0 = malloc(_strlen(argv[0]));
@@ -32,7 +31,7 @@ int main(int argc, char *argv[])
 		orror(argv[1]), orror("\n");
 		return (EXIT_FAILURE);
 	}
-	while ((getline(&buffer, &n, ptrfile) != -1))
+	while (fgets(buffer, 1000000, ptrfile))
 	{
 		line++;
 		strget = strtok(buffer, "\t\n\r ");
@@ -40,7 +39,6 @@ int main(int argc, char *argv[])
 			continue;
 		translate(strget, line, &start, buffer);
 	}
-	free(buffer);
 	fclose(ptrfile);
 	freest(start);
 	return (EXIT_SUCCESS);
