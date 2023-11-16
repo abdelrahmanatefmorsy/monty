@@ -41,6 +41,7 @@ void _push(stack_t **stack, unsigned int line);
 void orror(char *err);
 void _pop(stack_t **stack, unsigned int line);
 void freest(stack_t *stack);
+void _pint(stack_t **stack, unsigned int line);
 int _strlen(char *s);
 int comp(char *s1, char *s2);
 char *tostr(int number);

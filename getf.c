@@ -15,10 +15,11 @@ void translate(char *str, unsigned int line, stack_t **start)
 	instruction_t check[] = {
 		{"push", _push},
 		{"pall", _pall},
-		{"pop", _pop}
+		{"pop", _pop},
+		{"pint", _pint}
 	};
 
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 4; i++)
 	{
 		if (comp(str, check[i].opcode))
 		{
