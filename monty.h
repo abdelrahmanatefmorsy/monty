@@ -39,6 +39,7 @@ void translate(char *str, unsigned int line, stack_t **start);
 int _atoi(char *s);
 void _push(stack_t **stack, unsigned int line);
 void orror(char *err);
+void _pop(stack_t **stack, unsigned int line);
 void freest(stack_t *stack);
 int _strlen(char *s);
 int comp(char *s1, char *s2);

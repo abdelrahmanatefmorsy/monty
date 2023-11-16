@@ -1,8 +1,10 @@
-push 0
 push 1
-hec
+push 2
 push 3
-push -78
 pall
-push 1354
+pop
+pall
+pop
+pall
+pop
 pall
