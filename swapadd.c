@@ -19,7 +19,7 @@ int lenst(stack_t **start)
 /**
  * _swap - swap
  * @stack: my stack
- * @line_num: line number
+ * @line: line number
  * Rerun: 0
  */
 void _swap(stack_t **stack, unsigned int line)
