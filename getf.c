@@ -4,7 +4,6 @@
  * @line : line of file
  * @str : string
  * @start: stack
- * @buffer: buffer array
  * Return : 0
  */
 void translate(char *str, unsigned int line, stack_t **start)

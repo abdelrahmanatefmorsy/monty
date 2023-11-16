@@ -12,9 +12,9 @@ void _pop(stack_t **stack, unsigned int line)
 	if (!(*stack))
 	{
 		write(2, "L", 1);
-        orror(str);
-        orror(": can't pop an empty stack");
-        orror("\n");
+		orror(str);
+		orror(": can't pop an empty stack");
+		orror("\n");
 		free(str);
 		freest(*stack);
 		exit(EXIT_FAILURE);
