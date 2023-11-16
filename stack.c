@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
 	unsigned int line = 0, or;
 	stack_t *start = NULL;
 
-	ar0 = malloc(_strlen(argv[0]));
 	if (argc != 2)
 	{
+		ar0 = malloc(_strlen(argv[0]));
 		for (or = 2; argv[0][or]; or++)
 			ar0[or - 2] = argv[0][or];
 		ar0[or - 2] = '\0';
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	ptrfile = fopen(argv[1], "r");
 	if (ptrfile == NULL)
 	{
-		orror("Error: Can't open file");
+		orror("Error: Can't open file ");
 		orror(argv[1]), orror("\n");
 		return (EXIT_FAILURE);
 	}

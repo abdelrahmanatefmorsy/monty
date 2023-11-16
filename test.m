@@ -1,6 +1,5 @@
+push    123123
 push 1
-pint
-push 2
-pint
-push 3
-pinfff
+push       5
+efqfqef
+pall
