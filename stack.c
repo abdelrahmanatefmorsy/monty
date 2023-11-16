@@ -1,4 +1,7 @@
 #include "monty.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /**
  * main - main function of project
  * @argc: number of arguments
@@ -11,7 +14,7 @@ int main(int argc, char *argv[])
 	char *buffer = NULL;
 	char *strget = NULL, *ar0 = NULL;
 	unsigned int line = 0, or;
-	size_t size = 0;
+	size_t n = 0;
 	stack_t *start = NULL;
 
 	ar0 = malloc(_strlen(argv[0]));
@@ -29,7 +32,7 @@ int main(int argc, char *argv[])
 		orror(argv[1]), orror("\n");
 		return (EXIT_FAILURE);
 	}
-	while ((getline(&buffer, &size, ptrfile) != -1))
+	while ((getline(&buffer, &n, ptrfile) != -1))
 	{
 		line++;
 		strget = strtok(buffer, "\t\n\r ");
