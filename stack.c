@@ -9,11 +9,12 @@ int main(int argc, char *argv[])
 {
 	FILE *ptrfile;
 	char *buffer = malloc(10000);
-	char *strget, *ar0;
+	char *strget = NULL, *ar0 = NULL;
 	unsigned int line = 0, or;
+	size_t size = 0;
 	stack_t *start = NULL;
 
-	ar0 = malloc(100000);
+	ar0 = malloc(_strlen(argv[0]));
 	if (argc != 2)
 	{
 		for (or = 2; argv[0][or]; or++)
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
 		orror(argv[1]), orror("\n");
 		return (EXIT_FAILURE);
 	}
-	while (fgets(buffer, 10000, ptrfile))
+	while (getline(&buffer, &size, ptrfile) != -1)
 	{
 		line++;
 		strget = strtok(buffer, "\t\n\r ");
