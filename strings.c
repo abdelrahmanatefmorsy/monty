@@ -42,8 +42,8 @@ int comp(char *s1, char *s2)
  */
 char *tostr(int number)
 {
-	char *str;
-	int i = 0;
+	char *str, *str2;
+int i = 0, j = 0, z = 1;
 
 	str = malloc(sizeof(char) * 100000);
 	if (number == 0)
@@ -55,8 +55,7 @@ char *tostr(int number)
 	if (number < 0)
 	{
 		number *= -1;
-		str[0] = '-';
-		i++;
+		z = 0;
 	}
 	while (number != 0)
 	{
@@ -64,6 +63,19 @@ char *tostr(int number)
 		number /= 10;
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	i--;
+	str2 = malloc(_strlen(str) + 2);
+	if (z == 0)
+	{
+		str2[0] = '-';
+		j = 1;
+	}
+	while (i >= 0)
+	{
+		str2[j] = str[i];
+		j++;
+		i--;
+	}
+	str2[j] = '\0';
+	return (str2);
 }
