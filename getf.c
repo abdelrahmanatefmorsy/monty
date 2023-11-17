@@ -4,10 +4,10 @@
  * @line : line of file
  * @str : string
  * @start: stack
- * @buffer : the buffer
+ * @buffer : my arr
  * Return : 0
  */
-void translate(char *str, unsigned int line, stack_t **start, char *buffer)
+void translate(char *str, unsigned int line, stack_t **start, char* buffer)
 {
 	int i;
 	char *strline = tostr(line);
@@ -24,10 +24,11 @@ void translate(char *str, unsigned int line, stack_t **start, char *buffer)
 		{"nop", _nop}
 	};
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 8; i++)
 	{
 		if (comp(str, check[i].opcode))
 		{
+			free(strline);
 			check[i].f(start, line);
 			return;
 		}

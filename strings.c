@@ -29,9 +29,11 @@ int comp(char *s1, char *s2)
 
 	if (_strlen(s1) != _strlen(s2))
 		return (0);
-	for (i = 0; s1[i] && s2[i]; i++)
+	for (i = 0; s1[i] != '\0'; i++)
+	{
 		if (s1[i] != s2[i])
 			return (0);
+	}
 	return (1);
 }
 
@@ -43,9 +45,9 @@ int comp(char *s1, char *s2)
 char *tostr(int number)
 {
 	char *str, *str2;
-int i = 0, j = 0, z = 1;
+	int i = 0, j = 0, z = 1;
 
-	str = malloc(sizeof(char) * 100000);
+	str = malloc(sizeof(char) * 1000000);
 	if (number == 0)
 	{
 		str[0] = '0';
@@ -64,7 +66,7 @@ int i = 0, j = 0, z = 1;
 		i++;
 	}
 	i--;
-	str2 = malloc(_strlen(str) + 2);
+	str2 = malloc(2000000);
 	if (z == 0)
 	{
 		str2[0] = '-';

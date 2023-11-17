@@ -20,6 +20,7 @@ void _push(stack_t **stack, unsigned int line)
 		freest(*stack), exit(EXIT_FAILURE);
 		return;
 	}
+	free(lin);
 	n = _atoi(number);
 	s = malloc(sizeof(stack_t));
 	if (!s)
@@ -38,8 +39,8 @@ void _push(stack_t **stack, unsigned int line)
 	}
 	else
 	{
-		s->next = *stack;
-		*stack = s;
+		s->next = (*stack);
+		(*stack) = s;
 	}
 }
 /**
@@ -53,7 +54,7 @@ int notint(char *str)
 
 	for (i = 0; str[i]; i++)
 	{
-		if (str[i] == '-' && i == 0)
+		if (str[i] == '-' && i == 0 && _strlen(str) != 1)
 			continue;
 		if (str[i] < '0' || str[i] > '9')
 			return (0);
