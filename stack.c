@@ -40,6 +40,10 @@ int main(int argc, char *argv[])
 		strget = strtok(buffer, "\r\t\n ");
 		if (!strget)
 			continue;
+		if (comp(strget, "queue"))
+			continue;
+		if (strget[0] == '#')
+			continue;
 		translate(strget, line, &start, buffer);
 	}
 	fclose(ptrfile);
