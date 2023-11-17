@@ -4,9 +4,10 @@
  * @line : line of file
  * @str : string
  * @start: stack
+ * @buffer : the buffer
  * Return : 0
  */
-void translate(char *str, unsigned int line, stack_t **start)
+void translate(char *str, unsigned int line, stack_t **start, char *buffer)
 {
 	int i;
 	char *strline = tostr(line);
@@ -34,6 +35,7 @@ void translate(char *str, unsigned int line, stack_t **start)
 	write(2, "L", 1);
 	orror(strline), orror(": unknown instruction "), orror(str), orror("\n");
 	freest(*start);
+	free(buffer);
 	free(strline);
 	exit(EXIT_FAILURE);
 }

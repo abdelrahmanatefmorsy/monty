@@ -11,9 +11,10 @@
 int main(int argc, char *argv[])
 {
 	FILE *ptrfile;
-	char buffer[1000000];
+	char *buffer = NULL;
 	char *strget = NULL, *ar0 = NULL;
 	unsigned int line = 0, or;
+	size_t size = 0;
 	stack_t *start = NULL;
 
 	if (argc != 2)
@@ -33,13 +34,13 @@ int main(int argc, char *argv[])
 		orror(argv[1]), orror("\n");
 		return (EXIT_FAILURE);
 	}
-	while (fgets(buffer, 1000000, ptrfile))
+	while (getline(&buffer, &size, ptrfile) != -1)
 	{
 		line++;
-		strget = strtok(buffer, "\t\n\r ");
+		strget = strtok(buffer, "\r\t\n ");
 		if (!strget)
 			continue;
-		translate(strget, line, &start);
+		translate(strget, line, &start, buffer);
 	}
 	fclose(ptrfile);
 	freest(start);
