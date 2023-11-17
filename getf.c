@@ -7,7 +7,7 @@
  * @buffer : my arr
  * Return : 0
  */
-void translate(char *str, unsigned int line, stack_t **start, char* buffer)
+void translate(char *str, unsigned int line, stack_t **start, char *buffer)
 {
 	int i;
 	char *strline = tostr(line);
