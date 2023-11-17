@@ -24,7 +24,7 @@ void translate(char *str, unsigned int line, stack_t **start, char *buffer)
 		{"nop", _nop}
 	};
 
-	for (i = 0; i < 8; i++)
+	for (i = 0; i < 9; i++)
 	{
 		if (comp(str, check[i].opcode))
 		{
