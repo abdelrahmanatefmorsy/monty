@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
 			continue;
 		translate(strget, line, &start, buffer);
 	}
+	free(buffer);
 	fclose(ptrfile);
 	freest(start);
 	return (EXIT_SUCCESS);
