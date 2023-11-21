@@ -79,5 +79,6 @@ char *tostr(int number)
 		i--;
 	}
 	str2[j] = '\0';
+	free(str);
 	return (str2);
 }
